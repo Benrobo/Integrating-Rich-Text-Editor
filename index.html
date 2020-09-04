@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrating Rich Text Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Integrating Rich Text Editor</h1>
+        <button class="btn btn-success act">Activate</button>
+    <div class="overlay">
+        <form class="form-group">
+            <input type="text" class="form-control mt-2" placeholder="Enter a dummy text">
+
+            <input type="text" class="form-control mt-2 mt-3" placeholder="Enter a dummy text">
+
+            <textarea id="myeditor" cols="30" rows="10" class="form-control mt-2"></textarea>
+
+            <button class="btn btn-primary  sub">Sumit Post</button>
+        </form>
+    </div>
+       
+    </div>
+
+
+    <script>
+        CKEDITOR.replace("myeditor");
+
+        let btn = document.querySelector(".act");
+        let sub = document.querySelector(".sub");
+
+        btn.addEventListener("click", (e) =>{
+            e.preventDefault();
+
+            document.querySelector(".overlay").style.display = "block";
+        });
+        sub.addEventListener("click", (e) =>{
+            e.preventDefault();
+
+            document.querySelector(".overlay").style.display = "none";
+        })
+    </script>
+</body>
+</html>
